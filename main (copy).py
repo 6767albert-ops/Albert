@@ -119,7 +119,7 @@ plt.close()
 # 1-й способ
 from sympy import *
 
-C_ost = 40000
+C_ost = 15000
 Am_lst = []
 C_ost_lst = []
 k, T, C, L = symbols("k T C L")
@@ -169,23 +169,6 @@ plt.plot(tframe2["Y"], tframe2["C_ost_lst_2"], label="Am_lst_2")
 plt.savefig("chart2.png")
 plt.close()  # Закрываем figure
 
-# круговая диаграмма по 1 способу
-vals = Am_lst
-labels = [str(x) for x in range(1, 11)]
-explode = (0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1)
-fig, ax = plt.subplots()
-ax.pie(
-    vals,
-    explode=explode,
-    labels=labels,
-    autopct="%1.1f%%",
-    shadow=True,
-    wedgeprops={"lw": 1, "ls": "--", "edgecolor": "k"},
-    rotatelabels=True,
-)
-ax.axis("equal")
-plt.savefig("chart3.png")
-plt.close()
 
 # круговая диаграмма по 2 способу
 vals = Am_lst_2
